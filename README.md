@@ -10,6 +10,7 @@ AruBot is an AI-powered assistant capable of chatting, performing basic calculat
 - **Text Saving** – Save extracted information to `.txt` files.
 - **Dataset Cleaning** – Can clean datasets.
 - **ML Model Training** – Can Train ML models for you.
+- **Anime** – Can fetch Anime data from web.
 
 ## Installation
 
