@@ -15,12 +15,14 @@ def get_response(url):
         print("Something went wrong")
         return None
     return response
+
 def search_wiki(topic:str):
     url = "https://en.wikipedia.org/wiki/" + topic.capitalize().replace(" ","_")
     print("Scrapping ",url)
     response = get_response(url)
 
     soup = BeautifulSoup(response.text,"html.parser")
+
 
     content_div = soup.find("div",{"id":"mw-content-text","class":"mw-body-content"})
     div = content_div.find('div',{"class":"mw-content-ltr mw-parser-output"})
@@ -57,7 +59,7 @@ def get_TopAnime():
     url = "https://myanimelist.net/topanime.php"
     response = get_response(url)
     soup = BeautifulSoup(response.text,'html.parser')
-    ranking_table = soup.find('table',{"class":"top-ranking-table"})#.find('tbody')
+    ranking_table = soup.find('table',{"class":"top-ranking-table"})
     anime = ranking_table.find_all('tr',{"class":"ranking-list"})
 
     content = ""
@@ -71,6 +73,12 @@ def get_TopAnime():
     
     return content
 
+def search_web(query):
+    response = get_response("https://duckduckgo.com/?q=anime+movies&t=opera&ia=web")
+    soup = BeautifulSoup(response.text,'html.parser')
+
+    print(soup.find('p').get_text())
+
 if __name__ == "__main__":
     #download_imgFromWeb(r"https://www.geeksforgeeks.org/websites-apps/static-vs-dynamic-website/")
-    pass
+    search_web("")

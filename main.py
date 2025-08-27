@@ -4,6 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
 from Tools.tools import tools_
+from Tools.dataSciTools import dataSci_Tools
 load_dotenv()
 
 system_instrucntion = SystemMessage(
@@ -22,7 +23,7 @@ class Main:
     def __init__(self):
         self.run = True
         self.model = ChatGoogleGenerativeAI(model="gemini-2.5-flash",temperature=0)
-        self.tools = tools_
+        self.tools = tools_ + dataSci_Tools
         self.agent_executor = create_react_agent(self.model,self.tools)
         self.quiting_prompts = ['q','bye bro','bye','bye bye','see ya']
         print("Q to quit")
