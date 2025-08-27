@@ -8,6 +8,8 @@ AruBot is an AI-powered assistant capable of chatting, performing basic calculat
 - **Quick Calculations** – Perform simple arithmetic operations.
 - **Wikipedia Parsing** – Extract and clean Wikipedia content.
 - **Text Saving** – Save extracted information to `.txt` files.
+- **Dataset Cleaning** – Can clean datasets.
+- **ML Model Training** – Can Train ML models for you.
 
 ## Installation
 

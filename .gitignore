@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+#other
+CleanedCSV/
+#CSV Files
+.csv
